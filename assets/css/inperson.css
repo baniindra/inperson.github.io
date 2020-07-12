@@ -149,17 +149,17 @@ h1, h2, h3, h4, h5, h6{
 
 @media screen and (max-width: 320px) {
 	#header .title h1{
-		font-size: 1.5em;
+		font-size: 1.7em;
 	}
 	#header .title .menu-toggle{
 		display: flex;
 		right: 15px;
 	}
 	.navigation{
-		display: flex;
+		display: none;
 		position: fixed;
 		width: 100%;
-		height: -100px;
+		background: #fefefe;
 		transition: 500ms;
 	}
 	.navigation.mobile-active{
@@ -213,10 +213,10 @@ h1, h2, h3, h4, h5, h6{
 		right: 15px;
 	}
 	.navigation{
-		display: flex;
+		display: none;
 		position: fixed;
 		width: 100%;
-		height: -100px;
+		background: #fefefe;
 		transition: 500ms;
 	}
 	.navigation.mobile-active{
@@ -263,17 +263,17 @@ h1, h2, h3, h4, h5, h6{
 
 @media screen and (max-width: 425px) {
 	#header .title h1{
-		font-size: 2em;
+		font-size: 1.7em;
 	}
 	#header .title .menu-toggle{
 		display: flex;
 		right: 15px;
 	}
 	.navigation{
-		display: flex;
+		display: none;
 		position: fixed;
 		width: 100%;
-		height: -100px;
+		background: #fefefe;
 		transition: 500ms;
 	}
 	.navigation.mobile-active{
@@ -291,7 +291,7 @@ h1, h2, h3, h4, h5, h6{
 		top: -500px;
 		text-align: center;
 		transform: translate(-3%, -50%);
-		height: 100%;
+		height: 0;
 	}
 	.nav-menu.mobile-active{
 		width: 100%;
