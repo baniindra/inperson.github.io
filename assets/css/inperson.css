@@ -137,16 +137,6 @@ h1, h2, h3, h4, h5, h6{
 	opacity: 1;
 }
 
-.navigation.active{
-	display: flex;
-	background: #fefefe;
-}
-
-.nav-menu.active{
-	top: 30px;
-	transform: translateX(-95%);
-}
-
 @media screen and (max-width: 320px) {
 	#header .title h1{
 		font-size: 1.7em;
@@ -156,14 +146,17 @@ h1, h2, h3, h4, h5, h6{
 		right: 15px;
 	}
 	.navigation{
-		display: none;
+		display: flex;
 		position: fixed;
 		width: 100%;
+		height: 0;
+		top: -150px;
 		background: #fefefe;
 		transition: 500ms;
 	}
 	.navigation.mobile-active{
 		display: flex;
+		top: 0;
 		background: #fefefe;
 		padding: 60px 0 25px 0;
 		height: 100%;
@@ -213,14 +206,17 @@ h1, h2, h3, h4, h5, h6{
 		right: 15px;
 	}
 	.navigation{
-		display: none;
+		display: flex;
 		position: fixed;
 		width: 100%;
+		height: 0;
+		top: -150px;
 		background: #fefefe;
 		transition: 500ms;
 	}
 	.navigation.mobile-active{
 		display: flex;
+		top: 0;
 		background: #fefefe;
 		padding: 60px 0 25px 0;
 		height: 100%;
@@ -270,14 +266,17 @@ h1, h2, h3, h4, h5, h6{
 		right: 15px;
 	}
 	.navigation{
-		display: none;
+		display: flex;
 		position: fixed;
 		width: 100%;
+		height: 0;
+		top: -150px;
 		background: #fefefe;
 		transition: 500ms;
 	}
 	.navigation.mobile-active{
 		display: flex;
+		top: 0;
 		background: #fefefe;
 		padding: 60px 0 25px 0;
 		height: 100%;
@@ -1362,6 +1361,32 @@ footer .footer-social li:hover a{
 	height: 100%;
 }
 
+@media screen and (max-width: 320px) {
+	.title-helper{
+		font-size: 13px;
+	}
+	.main-title{
+		font-size: 21px;
+	}
+	.scroll-top{
+		right: 10px;
+		height: 35px;
+		width: 35px;
+	}
+	.contact-description h5{
+		font-size: 15px;
+	}
+	p{
+		font-size: 13px;
+	}
+	footer .footer-social:before{
+		width: 20% !important;
+	}
+	footer .footer-social:after{
+		width: 20% !important;
+	}
+}
+
 @media screen and (max-width: 425px) {
 	.title-helper{
 		font-size: 13px;
@@ -1380,25 +1405,11 @@ footer .footer-social li:hover a{
 	p{
 		font-size: 13px;
 	}
-}
-
-@media screen and (max-width: 375px) {
-	.title-helper{
-		font-size: 13px;
+	footer .footer-social:before{
+		max-width: 25%;
 	}
-	.main-title{
-		font-size: 21px;
-	}
-	.scroll-top{
-		right: 10px;
-		height: 35px;
-		width: 35px;
-	}
-	.contact-description h5{
-		font-size: 15px;
-	}
-	p{
-		font-size: 13px;
+	footer .footer-social:after{
+		max-width: 25%;
 	}
 }
 
@@ -1419,6 +1430,12 @@ footer .footer-social li:hover a{
 	}
 	p{
 		font-size: 13px;
+	}
+	footer .footer-social:before{
+		width: 35%;
+	}
+	footer .footer-social:after{
+		width: 35%;
 	}
 }
 /*------------------------------------------------*/
