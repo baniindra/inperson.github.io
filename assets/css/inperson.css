@@ -56,27 +56,57 @@ h1, h2, h3, h4, h5, h6{
 #header{
 	display: none;
 	position: fixed;
-	justify-content: center;
-	align-items: center;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 60px;
+	min-height: 60px;
 	background: #fefefe;
 	z-index: 10;
 }
 
 #header .title h1{
-	position: relative;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 	font-weight: 800;
 }
 
-.nav-menu{
+#header .title{
+	width: 100%;
+}
+
+#header .title .menu-toggle{
 	position: absolute;
+	display: none;
+	align-items: center;
+	height: 100%;
+	right: 12px;
+	font-size: 1.5em;
+	text-decoration: none;
+	color: inherit;
+}
+
+.navigation{
 	display: flex;
-	right: 125px;
-	top: 50%;
-	transform: translateY(-50%);
+	position: fixed;
+	top: 0;
+	padding: 60px 0;
+	left: 0;
+	width: 100%;
+	z-index: -999;
+	transition: 500ms;
+}
+
+.nav-menu{
+	position: relative;
+	display: flex;
+	top: -43px;
+	float: right;
+	z-index: 10;
+	transition: all 500ms;
 }
 
 .nav-menu li{
@@ -106,6 +136,187 @@ h1, h2, h3, h4, h5, h6{
 	width: 30px;
 	opacity: 1;
 }
+
+.navigation.active{
+	display: flex;
+	background: #fefefe;
+}
+
+.nav-menu.active{
+	top: 30px;
+	transform: translateX(-95%);
+}
+
+@media screen and (max-width: 320px) {
+	#header .title h1{
+		font-size: 1.5em;
+	}
+	#header .title .menu-toggle{
+		display: flex;
+		right: 15px;
+	}
+	.navigation{
+		display: flex;
+		position: fixed;
+		width: 100%;
+		height: -100px;
+		transition: 500ms;
+	}
+	.navigation.mobile-active{
+		display: flex;
+		background: #fefefe;
+		padding: 60px 0 25px 0;
+		height: 100%;
+		width: 100%;
+	}
+	.nav-menu{
+		width: 100%;
+		opacity: 0;
+		position: relative;
+		display: block;
+		top: -500px;
+		text-align: center;
+		transform: translate(-3%, -50%);
+		height: 0;
+	}
+	.nav-menu.mobile-active{
+		width: 100%;
+		opacity: 1;
+		position: relative;
+		display: block;
+		top: 50%;
+		text-align: center;
+		transform: translate(-3%, -30%);
+		height: 100%;
+	}
+	.nav-menu li{
+		list-style: none;
+		margin-bottom: 20px;
+	}
+	.nav-menu li a{
+		color: #111;
+		font-size: 26px;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.nav-menu li a:before{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	#header .title h1{
+		font-size: 1.7em;
+	}
+	#header .title .menu-toggle{
+		display: flex;
+		right: 15px;
+	}
+	.navigation{
+		display: flex;
+		position: fixed;
+		width: 100%;
+		height: -100px;
+		transition: 500ms;
+	}
+	.navigation.mobile-active{
+		display: flex;
+		background: #fefefe;
+		padding: 60px 0 25px 0;
+		height: 100%;
+		width: 100%;
+	}
+	.nav-menu{
+		width: 100%;
+		opacity: 0;
+		position: relative;
+		display: block;
+		top: -500px;
+		text-align: center;
+		transform: translate(-3%, -50%);
+		height: 0;
+	}
+	.nav-menu.mobile-active{
+		width: 100%;
+		opacity: 1;
+		position: relative;
+		display: block;
+		top: 50%;
+		text-align: center;
+		transform: translate(-3%, -30%);
+		height: 100%;
+	}
+	.nav-menu li{
+		list-style: none;
+		margin-bottom: 20px;
+	}
+	.nav-menu li a{
+		color: #111;
+		font-size: 26px;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.nav-menu li a:before{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	#header .title h1{
+		font-size: 2em;
+	}
+	#header .title .menu-toggle{
+		display: flex;
+		right: 15px;
+	}
+	.navigation{
+		display: flex;
+		position: fixed;
+		width: 100%;
+		height: -100px;
+		transition: 500ms;
+	}
+	.navigation.mobile-active{
+		display: flex;
+		background: #fefefe;
+		padding: 60px 0 25px 0;
+		height: 100%;
+		width: 100%;
+	}
+	.nav-menu{
+		width: 100%;
+		opacity: 0;
+		position: relative;
+		display: block;
+		top: -500px;
+		text-align: center;
+		transform: translate(-3%, -50%);
+		height: 100%;
+	}
+	.nav-menu.mobile-active{
+		width: 100%;
+		opacity: 1;
+		position: relative;
+		display: block;
+		top: 50%;
+		text-align: center;
+		transform: translate(-3%, -30%);
+		height: 100%;
+	}
+	.nav-menu li{
+		list-style: none;
+		margin-bottom: 20px;
+	}
+	.nav-menu li a{
+		color: #111;
+		font-size: 26px;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.nav-menu li a:before{
+		display: none;
+	}
+}
 /*------------------------------------------------*/
 /*Header Styling End*/
 
@@ -127,7 +338,7 @@ section{
 #home{
 	display: block;
 	position: relative;
-	top: 1px;
+	top: 0;
 	width: 100%;
 	height: 99.5vh;
 	background: url(../img/bg2.jpg) bottom center no-repeat;
@@ -164,6 +375,50 @@ section{
 	border: solid 4px;
 	left: 50%;
 	transform: translateX(-50%);
+}
+
+@media screen and (max-width: 767px) {
+	#home .main{
+		top: 200px;
+	}
+	#home .main:before{
+		content: "";
+		position: absolute;
+		display: block;
+		width: 45vh;
+		height: 15vh;
+		border: solid 4px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	#home .main h1{
+		font-size: 30px;
+		position: relative;
+		font-weight: 800;
+		user-select: none;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	#home .main{
+		top: 200px;
+	}
+	#home .main:before{
+		content: "";
+		position: absolute;
+		display: block;
+		width: 45vh;
+		height: 15vh;
+		border: solid 4px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	#home .main h1{
+		font-size: 30px;
+		position: relative;
+		font-weight: 800;
+		user-select: none;
+	}
 }
 
 #home .main h1{
@@ -211,57 +466,58 @@ section{
 	font-weight: 800;
 }
 
-#about p{
-	text-align: justify;
-}
-
-#about .desc{
-	position: relative;
-	font-size: .97em;
-}
-
 .bio{
 	position: relative;
 	display: flex;
-	min-height: 300px;
 	width: 100%;
-	border: solid 1px #ddd;
+	box-sizing: border-box;
+	background: #000000 url(../img/faces/marc.jpg) center center no-repeat;
 	margin-bottom: 20px;
+	height: 100px;
 }
 
-.bio .avatar{
+.bio span:nth-child(1){
 	position: relative;
-	min-height: 100%;
-}
-
-.bio .avatar img{
-	position: relative;
-	height: 100%;
-	width: 200px;
-	object-fit: cover;
-}
-
-.bio .bio-content{
-	position: relative;
-	padding: 10px 20px;
-}
-
-.bio .bio-content h2{
-	font-family: "Poppins", sans-serif;
-	font-weight: 800;
-	text-transform: uppercase;
-}
-
-.bio .bio-content p{
-	margin: 0;
-	padding: 0;
-	font-size: .86em;
-}
-
-.bio .bio-content .table{
-	margin-top: 25px;
-	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
+	font-size: 36px;
+	font-weight: 800;
+	font-family: "Poppins", sans-serif;
+	color: #fff;
+}
+
+.bio span:nth-child(2){
+	position: relative;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	font-size: 36px;
+	font-weight: 800;
+	font-family: "Poppins", sans-serif;
+	color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+	.bio span:nth-child(1){
+		font-size: 25px;
+
+	}
+	.bio span:nth-child(2){
+		font-size: 25px;
+	}
+}
+
+@media screen and (max-width: 479px) {
+	.bio span:nth-child(1){
+		font-size: 25px;
+
+	}
+	.bio span:nth-child(2){
+		font-size: 25px;
+	}
 }
 
 .card-columns{
@@ -283,7 +539,7 @@ section{
 		column-count: 2;
 	}
 	.card-columns div { margin: 0; 
-		width: 200px;
+		width: 100%;
 	}
 }
 
@@ -295,7 +551,7 @@ section{
 	}
 	.card-columns div { 
 		margin: 0; 
-		width: 200px;
+		width: 100%;
 	}
 }
 
@@ -513,7 +769,7 @@ section{
 		column-count: 2;
 	}
 	.portfolio div { margin: 0; 
-		width: 200px;
+		width: 100%;
 	}
 }
 
@@ -525,7 +781,7 @@ section{
 	}
 	.portfolio div { 
 		margin: 0; 
-		width: 200px;
+		width: 100%;
 	}
 }
 
@@ -665,6 +921,10 @@ section{
 		margin: 0; 
 		width: 200px;
 	}
+}
+
+.services .services-content .services-desc{
+	width: 100%;
 }
 
 .services .services-content .services-desc i{
@@ -1100,6 +1360,66 @@ footer .footer-social li:hover a{
 
 .scroll-top:hover i:after{
 	height: 100%;
+}
+
+@media screen and (max-width: 425px) {
+	.title-helper{
+		font-size: 13px;
+	}
+	.main-title{
+		font-size: 21px;
+	}
+	.scroll-top{
+		right: 10px;
+		height: 35px;
+		width: 35px;
+	}
+	.contact-description h5{
+		font-size: 15px;
+	}
+	p{
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.title-helper{
+		font-size: 13px;
+	}
+	.main-title{
+		font-size: 21px;
+	}
+	.scroll-top{
+		right: 10px;
+		height: 35px;
+		width: 35px;
+	}
+	.contact-description h5{
+		font-size: 15px;
+	}
+	p{
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.title-helper{
+		font-size: 13px;
+	}
+	.main-title{
+		font-size: 21px;
+	}
+	.scroll-top{
+		right: 10px;
+		height: 35px;
+		width: 35px;
+	}
+	.contact-description h5{
+		font-size: 15px;
+	}
+	p{
+		font-size: 13px;
+	}
 }
 /*------------------------------------------------*/
 /*Scroll Top Styling End*/

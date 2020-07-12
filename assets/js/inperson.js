@@ -26,6 +26,15 @@
   });
 
   $(document).ready(function(){
+    $('.menu-toggle').click(function(){
+      $('.navigation, .nav-menu').toggleClass("mobile-active");
+    });
+    $('.nav-menu li a').click(function(){
+      $('.navigation, .nav-menu').removeClass("mobile-active");
+    });
+  });
+
+  $(document).ready(function(){
   	$("a").on('click', function(e) {
   		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
   			var hash = this.hash;
